@@ -7,13 +7,17 @@ import { useNavigate } from "react-router-dom";
 export default function Login() {
   const navigate = useNavigate();
   const [data, setData] = useState({ email: "", password: "" });
+  const [loginMessage, changeLoginMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await loginUser(data);
     localStorage.setItem("token", res.token);
-    if ((res.message = "Login successful")) {
+    if (res.message === "Login successful") {
       navigate("/dashboard");
+    } else {
+      changeLoginMessage(res.message);
+      console.log("login unsuccessful");
     }
   };
 
@@ -32,6 +36,7 @@ export default function Login() {
           onChange={(e) => setData({ ...data, password: e.target.value })}
         />
         <button>Login</button>
+        <p>{loginMessage}</p>
       </form>
     </div>
   );
