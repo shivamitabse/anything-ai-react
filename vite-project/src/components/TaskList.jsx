@@ -18,6 +18,8 @@ export default function TaskList() {
       {tasks.map((task) => (
         <div key={task._id} className="task">
           {task.title}
+          {" : "} {task.description}
+          {" : : Assigned to UserId - "} {task.user_id}
         </div>
       ))}
     </div>
