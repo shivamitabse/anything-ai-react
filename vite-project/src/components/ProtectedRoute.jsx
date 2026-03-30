@@ -5,15 +5,37 @@ export default function ProtectedRoute({ children }) {
   const [isAuth, setIsAuth] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/v1/auth/me", {
-      credentials: "include",
-    })
-      .then((res) => res.json())
-      .then((data) => setIsAuth(data.user ? true : false))
-      .catch(() => setIsAuth(false));
+    const checkAuth = async () => {
+      try {
+        const res = await fetch("http://localhost:5000/api/v1/auth/me", {
+          credentials: "include", // 🔥 REQUIRED
+        });
+
+        const data = await res.json();
+
+        if (data.user) {
+          setIsAuth(true);
+        } else {
+          setIsAuth(false);
+        }
+      } catch (err) {
+        setIsAuth(false);
+      }
+    };
+
+    checkAuth();
   }, []);
 
-  if (isAuth === null) return <p>Loading...</p>;
+  // ⏳ while checking
+  if (isAuth === null) {
+    return <p>Loading...</p>;
+  }
 
-  return isAuth ? children : <Navigate to="/" />;
+  // ❌ not authenticated
+  if (!isAuth) {
+    return <Navigate to="/" replace />;
+  }
+
+  // ✅ authenticated
+  return children;
 }

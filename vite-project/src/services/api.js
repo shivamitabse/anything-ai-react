@@ -1,39 +1,52 @@
 const BASE_URL = "http://localhost:5000/api/v1";
 
+// LOGOUT
+export const logoutUser = async () => {
+  await fetch(`${BASE_URL}/auth/logout`, {
+    method: "POST",
+    credentials: "include",
+  });
+};
+
+// REGISTER
 export const registerUser = async (data) => {
   const res = await fetch(`${BASE_URL}/auth/register`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
+    credentials: "include", // ✅ add
     body: JSON.stringify(data),
   });
   return res.json();
 };
 
+// LOGIN
 export const loginUser = async (data) => {
   const res = await fetch(`${BASE_URL}/auth/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
+    credentials: "include", // ✅ add
     body: JSON.stringify(data),
   });
   return res.json();
 };
 
+// GET TASKS
 export const getTasks = async () => {
-  const token = localStorage.getItem("token");
   const res = await fetch(`${BASE_URL}/tasks`, {
-    headers: { Authorization: `Bearer ${token}` },
+    credentials: "include", // ✅ REQUIRED
   });
   return res.json();
 };
 
+// CREATE TASK
 export const createTask = async (data) => {
-  const token = localStorage.getItem("token");
-  await fetch(`${BASE_URL}/tasks`, {
+  const res = await fetch(`${BASE_URL}/tasks`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
     },
+    credentials: "include", // ✅ REQUIRED
     body: JSON.stringify(data),
   });
+  return res.json();
 };

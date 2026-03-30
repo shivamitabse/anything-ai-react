@@ -11,3 +11,8 @@
   margin: 0 10px;
   text-decoration: none;
 }
+.user-email {
+  margin: 0 10px;
+  color: yellow;
+  font-weight: bold;
+}
