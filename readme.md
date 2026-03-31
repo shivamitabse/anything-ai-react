@@ -7,7 +7,6 @@ A modern AI-powered web application built with React that allows users to intera
 * ⚡ Fast and responsive UI using React + Vite
 * 🎨 Clean and modern design
 * 🔐 Authentication support (if implemented)
-* 🤖 AI-powered interactions (chat / prompt-based responses)
 * 📡 API integration with backend (Express server)
 * 📱 Fully responsive (mobile + desktop)
 
