@@ -80,10 +80,6 @@ Create a `.env` file:
 VITE_API_URL=http://localhost:5000
 ```
 
-## 📸 Screenshots
-
-*Add screenshots here*
-
 ## 📦 Build for Production
 
 ```bash
