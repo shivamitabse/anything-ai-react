@@ -2,19 +2,23 @@ import { useState, useEffect } from "react";
 import "./TaskForm.css";
 import { createTask } from "../services/api";
 
-export default function TaskForm() {
+export default function TaskForm({ update }) {
   const [title, setTitle] = useState("");
   const [description, changeDescription] = useState("");
   const [userId, changeUserId] = useState("");
   const [isAdmin, setIsAdmin] = useState("");
 
+  const [count, setCount] = useState(0);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     await createTask({ title, description, userId });
-    console.log(userId);
-
-    alert("Task Added");
+    setCount((prev) => prev + 1);
   };
+
+  useEffect(() => {
+    update(count);
+  }, [count]);
 
   useEffect(() => {
     const checkAuth = async () => {

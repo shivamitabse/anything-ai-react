@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./TaskList.css";
 import { getTasks } from "../services/api";
 
-export default function TaskList() {
+export default function TaskList({ updatedTimes }) {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
@@ -11,7 +11,12 @@ export default function TaskList() {
       setTasks(data);
     }
     fetchData();
-  }, []);
+  }, [updatedTimes]);
+
+  useEffect(() => {
+    // fetch tasks again
+    console.log("Refetching tasks...");
+  }, [updatedTimes]);
 
   return (
     <div>
