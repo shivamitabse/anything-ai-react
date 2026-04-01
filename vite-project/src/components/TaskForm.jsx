@@ -23,11 +23,13 @@ export default function TaskForm({ update }) {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/v1/auth/me", {
+        const res = await fetch("https://testmysite.in/api/v1/auth/me", {
           credentials: "include", // 🔥 REQUIRED
         });
 
         const data = await res.json();
+	console.log(data.user);
+	console.log("the value received from fetch is", data);
         setIsAdmin(data.user.email);
       } catch (err) {
         console.log(err);

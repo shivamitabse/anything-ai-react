@@ -9,7 +9,7 @@ export default function Navbar() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/v1/auth/me", {
+        const res = await fetch("https://testmysite.in/api/v1/auth/me", {
           credentials: "include",
         });
 
