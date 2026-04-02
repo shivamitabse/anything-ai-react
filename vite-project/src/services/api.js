@@ -1,4 +1,4 @@
-const BASE_URL = "https://testmysite.in/api/v1";
+const BASE_URL = `${import.meta.env.VITE_API_URL}/api/v1`;
 
 // LOGOUT
 export const logoutUser = async () => {

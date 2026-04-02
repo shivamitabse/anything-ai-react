@@ -9,9 +9,12 @@ export default function Navbar() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch("https://testmysite.in/api/v1/auth/me", {
-          credentials: "include",
-        });
+        const res = await fetch(
+          `${import.meta.env.VITE_API_URL}/api/v1/auth/me`,
+          {
+            credentials: "include",
+          },
+        );
 
         const data = await res.json();
 

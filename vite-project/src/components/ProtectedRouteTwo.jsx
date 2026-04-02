@@ -7,9 +7,12 @@ export default function ProtectedRoute({ children }) {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await fetch("https://testmysite.in/api/v1/auth/me", {
-          credentials: "include", // 🔥 REQUIRED
-        });
+        const res = await fetch(
+          `${import.meta.env.VITE_API_URL}/api/v1/auth/me`,
+          {
+            credentials: "include", // 🔥 REQUIRED
+          },
+        );
 
         const data = await res.json();
 
