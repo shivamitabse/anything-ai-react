@@ -1,0 +1,10 @@
+.product-item-div {
+  border: 1px solid lightgray;
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.product-image {
+  width: 100%;
+}

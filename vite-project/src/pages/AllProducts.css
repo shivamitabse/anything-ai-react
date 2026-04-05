@@ -1,0 +1,9 @@
+.all-products-div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+}
