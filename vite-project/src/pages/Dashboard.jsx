@@ -15,7 +15,7 @@ export default function Dashboard() {
     <div>
       <Navbar />
       <div className="dashboard">
-        <h2>Dashboard</h2>
+        <h2>User Dashboard</h2>
         <TaskForm update={setUpdatedTimes} />
         <TaskList updatedTimes={updatedTimes} />
       </div>
