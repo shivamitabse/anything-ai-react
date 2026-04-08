@@ -1,0 +1,21 @@
+.cart-component {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.main-cart-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.paybutton {
+  color: white;
+  border-radius: 12px;
+  padding: 8px;
+  border: 1px solid gray;
+  background-color: rgb(91, 65, 32);
+  cursor: pointer;
+}

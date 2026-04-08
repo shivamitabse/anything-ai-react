@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import ProductItem from "../components/ProductItem";
 import { Link } from "react-router-dom";
 import "./AllProducts.css";
-import { resume } from "react-dom/server";
+import Navbar from "../components/Navbar";
 
 const AllProducts = () => {
   const [products, changeProducts] = useState([]);
@@ -20,13 +20,16 @@ const AllProducts = () => {
 
   const renderProducts = () => {
     return products.length === 0 ? null : (
-      <div className="all-products-div">
-        {products.map((product) => {
-          return <ProductItem key={product.id} product={product} />;
-        })}
-        <Link to="/cart">
-          <button type="button">Checkout</button>
-        </Link>
+      <div>
+        <Navbar />
+        <div className="all-products-div">
+          {products.map((product) => {
+            return <ProductItem key={product.id} product={product} />;
+          })}
+          <Link to="/cart">
+            <button type="button">Checkout</button>
+          </Link>
+        </div>
       </div>
     );
   };

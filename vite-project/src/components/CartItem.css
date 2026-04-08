@@ -1,0 +1,14 @@
+.cart-item {
+  margin: 20px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 12px;
+  border: 1px solid lightgray;
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.product-image {
+  width: 100%;
+}

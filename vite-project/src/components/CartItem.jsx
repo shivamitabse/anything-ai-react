@@ -1,19 +1,20 @@
-import "./ProductItem.css";
+import "./CartItem.css";
+import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../context/CartProvider";
 
-const ProductItem = ({ product }) => {
+const CartItem = (product) => {
   const { cartItems, addToCart, removeFromCart } = useContext(CartContext);
 
-  const { id, name, price, short_description, image_url, category } = product;
+  const { id, name, price, short_description, image_url, category } =
+    product.product;
 
   const onButtonClick = () => {
-    addToCart(product);
-    alert("product added to cart, press on checkout button");
+    removeFromCart(product);
   };
 
   return (
-    <div className="product-item-div">
+    <div className="cart-item">
       <img
         className="product-image"
         src={`${import.meta.env.VITE_API_URL}${image_url}`}
@@ -24,10 +25,10 @@ const ProductItem = ({ product }) => {
       <p className="price">Price : {`${price}`}</p>
       <p>{`${short_description}`}</p>
       <button type="button" onClick={onButtonClick}>
-        Add To Cart
+        Remove From Cart
       </button>
     </div>
   );
 };
 
-export default ProductItem;
+export default CartItem;

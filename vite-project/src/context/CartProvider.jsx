@@ -11,7 +11,11 @@ const CartProvider = ({ children }) => {
   };
 
   const removeFromCart = (item) => {
-    changeCartItems(cartItems.filter((eachItem) => eachItem != item));
+    console.log(item);
+
+    changeCartItems(
+      cartItems.filter((eachItem) => eachItem.id != item.product.id),
+    );
   };
 
   return (

@@ -7,6 +7,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import AllProducts from "./pages/AllProducts";
 import SpecificProduct from "./pages/SpecificProduct";
 import Cart from "./pages/Cart";
+import Success from "./pages/Success";
+import Failure from "./pages/Failure";
 import CartProvider from "./context/CartProvider";
 import "./App.css";
 
@@ -45,6 +47,8 @@ function App() {
           <Route path="/all-products" element={<AllProducts />} />
           <Route path="/product/:id" element={<SpecificProduct />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/success" element={<Success />} />
+          <Route path="/failure" element={<Failure />} />
         </Routes>
       </CartProvider>
     </BrowserRouter>
