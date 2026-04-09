@@ -55,7 +55,7 @@ const Cart = () => {
     }
 
     const options = {
-      key: "rzp_live_SYvUkytdormQ7g", // Replace with your Razorpay key_id
+      key: "rzp_live_Sb0eJcZE8AB5UY", // Replace with your Razorpay key_id
       amount: "600",
       currency: "INR",
       name: "TestMySite",
@@ -83,8 +83,8 @@ const Cart = () => {
       },
       prefill: {
         name: "Shivakumar",
-        email: "shivamitabse@gmail.com",
-        contact: "9703814761",
+        email: "srinavya962@gmail.com",
+        contact: "9491963726",
       },
       theme: {
         color: "#592dc8",
