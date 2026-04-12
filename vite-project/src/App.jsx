@@ -10,6 +10,7 @@ import Cart from "./pages/Cart";
 import Success from "./pages/Success";
 import Failure from "./pages/Failure";
 import CartProvider from "./context/CartProvider";
+import AddProducts from "./pages/AddProducts";
 import "./App.css";
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
 
           <Route path="/all-products" element={<AllProducts />} />
           <Route path="/product/:id" element={<SpecificProduct />} />
+          <Route path="/add-products" element={<AddProducts />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/success" element={<Success />} />
           <Route path="/failure" element={<Failure />} />

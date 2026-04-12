@@ -1,0 +1,14 @@
+.add-products-component {
+  margin-top: 80px;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+}
+
+.form-el {
+  margin: 10px 0px;
+}

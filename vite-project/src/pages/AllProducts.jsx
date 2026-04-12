@@ -18,6 +18,8 @@ const AllProducts = () => {
     getSpecificProduct();
   }, []);
 
+  console.log(products, `${import.meta.env.VITE_API_URL}/api/v1/get-products/`);
+
   const renderProducts = () => {
     return products.length === 0 ? null : (
       <div>
